@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ace.dao.UserMapper">
+	<resultMap type="com.ace.entity.User" id="BaseResultMap">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<id column="portrait" property="portrait" jdbcType="VARCHAR" />
+		<id column="login_name" property="loginName" jdbcType="VARCHAR" />
+		<id column="user_name" property="userName" jdbcType="VARCHAR" />
+		<id column="password" property="password" jdbcType="VARCHAR" />
+		<id column="create_time" property="createTime" jdbcType="VARCHAR" />
+		<id column="remark" property="remark" jdbcType="VARCHAR" />
+		<id column="group_id" property="groupId" jdbcType="INTEGER" />
+		<id column="is_admin" property="isAdmin" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<resultMap type="com.ace.controller.admin.bo.UserBO" id="UserResultMap">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<id column="login_name" property="loginName" jdbcType="VARCHAR" />
+		<id column="user_name" property="userName" jdbcType="VARCHAR" />
+		<id column="group_name" property="groupName" jdbcType="VARCHAR" />
+		<id column="portrait" property="portrait" jdbcType="VARCHAR" />
+		<id column="create_time" property="createTime" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		id,portrait,login_name,user_name,password,create_time,remark,group_id,is_admin
+	</sql>
+	
+	<sql id="User_Column_List">
+		id,login_name,user_name,portrait,u.create_time
+	</sql>
+	
+	<select id="getUserToLoginName" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from tbl_user u where u.login_name = #{loginName,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="getUserList" resultMap="UserResultMap">
+		select u.<include refid="User_Column_List" />,g.name as group_name from tbl_user u left join tbl_group g on u.group_id = g.id 
+		where 1 = 1 order by u.create_time desc 
+	</select>
+	
+	<select id="getUserById" resultMap="UserResultMap">
+		select u.<include refid="User_Column_List" />,g.name as group_name from tbl_user u left join tbl_group g on u.group_id = g.id 
+		where u.id = #{id,jdbcType=INTEGER} order by u.create_time desc 
+	</select>
+
+</mapper>

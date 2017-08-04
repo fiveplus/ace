@@ -1,0 +1,155 @@
+<div th:fragment="main">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<script type="text/javascript">
+			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+		</script>
+		<ul class="breadcrumb">
+			<li>
+				<i class="icon-home home-icon"></i>
+				<a th:href="@{/admin/}">Home</a>
+			</li>
+			<li>
+				<a th:href="@{/admin/permission/list/1}">权限管理</a>
+			</li>
+			<li class="active">权限新增</li>
+		</ul><!-- .breadcrumb -->
+		<div class="nav-search" id="nav-search">
+			<form action="" method="post" onsubmit="return false;" class="form-search">
+				<span class="input-icon">
+					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+					<i class="icon-search nav-search-icon"></i>
+				</span>
+			</form>
+		</div><!-- #nav-search -->
+	</div>
+	<div class="page-content">
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->
+				<div class="page-header">
+					<h1>权限新增
+					<small>
+						<i class="icon-double-angle-right">
+							请输入权限详细资料 (*为必填项)
+						</i>
+					</small>
+					</h1>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<form th:action="@{/admin/permission/save}" role="form" class="form-horizontal" method="post" id="form_post">
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请选择父权限ID </label>
+								<div class="col-sm-9">
+									<select name="parentId">
+										<option value="admin">请选择</option>
+										<option th:text="${p.name}" th:value="${p.id}" th:each="p,stat:${parents}"></option>
+									</select>
+									<font style="color:red; height:25px;line-height:25px;overflow:hidden;"><b>&nbsp;*</b></font>
+								</div>
+							</div>
+							<div class="space-4"></div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入权限ID </label>
+								<div class="col-sm-9">
+									<input type="text" id="form-field-1" placeholder="权限ID" class="col-xs-10 col-sm-5" name="id"  />
+									<font style="color:red; height:25px;line-height:25px;overflow:hidden;"><b>&nbsp;*</b></font>
+								</div>
+							</div>
+							<div class="space-4"></div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入权限名称 </label>
+								<div class="col-sm-9">
+									<input type="text" id="form-field-1" placeholder="权限名称" class="col-xs-10 col-sm-5" name="name"  />
+									<font style="color:red; height:25px;line-height:25px;overflow:hidden;"><b>&nbsp;*</b></font>
+								</div>
+							</div>
+							<div class="space-4"></div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入ClassName</label>
+								<div class="col-sm-9">
+									<input type="text" id="form-field-1" placeholder="ClassName" class="col-xs-10 col-sm-5" name="className"  />
+								</div>
+							</div>
+							<div class="space-4"></div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入权限坐标</label>
+								<div class="col-sm-9">
+									<input type="text" id="form-field-1" placeholder="权限坐标" class="col-xs-10 col-sm-5" name="menuIndex"  />
+								</div>
+							</div>
+							<div class="space-4"></div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入URL</label>
+								<div class="col-sm-9">
+									<input type="text" id="form-field-1" placeholder="URL" class="col-xs-10 col-sm-5" name="url"  />
+								</div>
+							</div>
+							<div class="space-4"></div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 是否为菜单</label>
+								<div class="col-sm-9">
+									<select name="isMenu">
+										<option value="Y" >是</option>
+										<option value="N" >否</option>
+									</select>
+									<font style="color:red; height:25px;line-height:25px;overflow:hidden;"><b>&nbsp;*</b></font>
+								</div>
+							</div>
+							<div class="space-4"></div>
+							
+							<div class="clearfix form-actions">
+								<div class="col-md-offset-3 col-md-9">
+									<button class="btn btn-info" type="button" onclick="form_submit('form_post')">
+										<i class="icon-ok bigger-110"></i>
+										提交
+									</button>
+
+									&nbsp; &nbsp; &nbsp;
+									<button class="btn" type="reset" onclick="history.go(-1)">
+										<i class="icon-undo bigger-110"></i>
+										返回
+									</button>
+								</div>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+				<!-- PAGE CONTENT ENDS -->
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.page-content -->
+	<script type="text/javascript" th:inline="javascript">
+		/*<![CDATA[*/
+		function form_submit(id){
+			bootbox.confirm("确认新增?",function(result){
+				var form = $("#"+id);
+				$.ajax({
+					url:form.attr('action'),
+					type:"POST",
+					data:form.serialize(),
+					dataType:'json',
+					success:function(data){
+						if(data.code == 0){
+							ace_msg.success(data.msg);
+							go_back();
+						}else{
+							ace_msg.danger(data.msg);
+						}
+					},
+					error:function(data){
+						//console.log(data);
+					}
+				});
+			});
+		}
+		/*]]>*/
+	</script>
+</div>

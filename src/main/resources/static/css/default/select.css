@@ -1,0 +1,38 @@
+/**
+	项目搜索结果页
+*/
+.nav {height:70px;background:#fff;margin:0 auto;}
+.nav_inner {width:1190px;height:70px;margin:0 auto;}
+.nav_inner a img {width:182px;height:70px;float:left;}
+.content {margin:0 auto;background:url("images/bg01.jpg") no-repeat;padding:0 0 70px 0;background-color: #000;}
+.content_main {width:1190px;margin:0 auto;background:#fff;position:relative;top:50px;}
+.title {}
+.title_in {border-bottom:#a0a0a0 solid 1px;margin:0 40px;padding:20px 0 10px 0;}
+.h2 {font-size:34px;font-family:"Microsoft YaHei";font-weight:400;color:#333333;padding-left: 4px;}
+.per_information {margin:15px 0 0 0;}
+.per_information_in {border-bottom:#a0a0a0 solid 1px;margin:0 34px;padding:0 0 20px 0;}
+.title_information {background:url("images/information_bg.jpg")no-repeat;}
+.per {font-size:18px;font-family:"Microsoft YaHei";color:#15a5ff;font-weight:500;padding-left:34px;}
+.ta_information {width:900px;float:left;}
+.ta_information td {height:40px;color:#333333;font-size:16px;font-family:"Microsoft YaHei";line-height:35px;border-bottom:1px solid #eeeeee;}
+.ta_information td span {color:#333333;font-size:12px;font-family:"Microsoft YaHei";line-height:35px;}
+.ta_first {width:120px;}
+.ta_secord {width:180px;}
+.right_pic {width:173px;height:215px;float:right;margin-top:10px;}
+.Pro_information {margin:10px 0 0 0;}
+.title_name {background:url("images/information_bg.jpg")no-repeat;}
+.pro {font-size:18px;font-family:"Microsoft YaHei";color:#15a5ff;font-weight:500;padding-left:34px;line-height:32px;float:left;}
+.num {font-size:16px;font-family:"Microsoft YaHei";color:#333333;font-weight:500;float:right;line-height:32px;float:right;}
+.num span {color:#333333;font-size:12px;font-family:"Microsoft YaHei";line-height:35px;}
+.tab_information_in {border-bottom:#a0a0a0 solid 1px;margin:0 34px;padding: 0 0 20px 0;}
+.tab_information {width:646px;float:left;}
+.tab_first {height:40px;color:#333333;font-size:16px;font-family:"Microsoft YaHei";line-height:35px;border-bottom:1px solid #eeeeee;}
+.tab_first span {color:#333333;font-size:12px;font-family:"Microsoft YaHei";line-height:35px;}
+.right_img {width:449px;height:270px;float:right;}
+.project_mana {margin:20px 0 0 0;padding: 0 0 20px 0;}
+.tit_name {width:163px;height:32px;background:url("images/information_bg.jpg")no-repeat;}
+.mana {font-size:18px;font-family:"Microsoft YaHei";color:#15a5ff;font-weight:500;padding-left:34px;line-height:32px;float:left;}
+.mana_information {width:560px;margin:0 34px;float:left;}
+.mana_first {height:40px;color:#333333;font-size:16px;font-family:"Microsoft YaHei";line-height:35px;border-bottom:1px solid #eeeeee;}
+.but {width:150px;height:40px;background:#7fbaf0;border:1px solid #1f4b73;outline:none;color:#fff;font-size:16px;font-family:"Microsoft YaHei";cursor:pointer;border-radius:5px;}
+.but:hover {background:#47a6ff;}

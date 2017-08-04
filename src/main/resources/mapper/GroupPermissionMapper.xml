@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ace.dao.GroupPermissionMapper">
+	<resultMap type="com.ace.entity.GroupPermission" id="BaseResultMap">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<id column="group_id" property="groupId" jdbcType="INTEGER" />
+		<id column="permission_id" property="permissionId" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<delete id="deletePermissionByGroupId">
+		delete from sys_group_permission where group_id = #{groupId,jdbcType=INTEGER} 
+	</delete>
+	
+</mapper>

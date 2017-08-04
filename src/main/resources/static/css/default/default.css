@@ -1,0 +1,181 @@
+body{
+	margin:0;
+	padding:0;
+	font-family: "黑体";
+}
+.main{
+	
+}
+.logo{
+	background:url("images/logo.png") no-repeat;
+	background-size:272px 92px;
+	height:92px;
+	width:272px;
+	margin-bottom: 30px;
+}
+.search{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	height: 38px;
+	overflow: hidden;
+	padding: 6px 9px 0;
+	border: 1px solid #eee;
+	width: 60%;
+	min-width: 600px;
+	max-width: 600px;
+}
+.search:hover{
+	border: 1px solid #ddd;
+}
+.search-text:focus{
+	 
+}
+
+.search-text{
+	border: none; 
+	padding: 0px; 
+	margin: 0px; 
+	height: auto; 
+	width: 100%; 
+	background-image: url(data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D); 
+	background-color: transparent; 
+	z-index: 6; 
+	outline: none; 
+	background-position: initial initial; 
+	background-repeat: initial initial;
+	line-height: 26px !important;
+	height: 26px !important;
+	font: 16px arial, sans-serif;
+}
+.search-button{
+	margin-top:30px;
+	border: 1px solid #ccc;
+	color:#757575;
+	background: white;
+	padding: 8px 30px;
+	font-size: 13px;
+}
+.search-button:hover{
+	border: 1px solid #ccc;
+	color:#000;
+	cursor: pointer;
+}
+
+.clear{
+	clear: both;
+}
+.search-index{
+	border-bottom: 1px solid #ddd;
+	
+}
+.query-button{
+	background: transparent;
+	border: 0;
+	background-color: #4285f4;
+	color: #fff;
+	font-size: 14px;
+	padding: 5px 20px;
+	margin: 0;
+	height: 38px;
+	cursor: pointer;
+}
+.main-content{
+	margin:0 126px;
+	min-height:300px;
+	width:800px;
+	
+}
+.main-content .item{
+	padding: 0 0 10px 0;
+}
+.main-content .item a{
+	text-decoration: none;
+}
+.main-content .item a:HOVER{
+	text-decoration: underline;
+}
+.main-content .item .content{
+	font-size: 13px;
+	color: #333333;
+	padding: 5px 0 5px 0;
+}
+.main-content .item .bottom{
+	font-size: 12px;
+	color:#14951e;
+}
+
+.main-bottom{
+	margin-left: 120px;
+	font-size: 12px;
+	padding: 10px 0 10px 0;
+}
+.main-bottom a{
+	color: #6c6c6c;
+	text-decoration: none;
+	margin-right: 50px;
+}
+.main-bottom a:HOVER{
+	color:#3d3d3d;
+}
+.page{
+	font-size:14px;
+	padding: 20px 0 0px 0;
+}
+.page a{
+	text-decoration: none;
+	color: #3d7dff;
+	margin-right: 5px;
+}
+.page a:HOVER{
+	text-decoration: underline;
+}
+
+.tishi{
+	font-size:12px;
+}
+.tishi ul li{
+	padding: 5px 0;
+}
+
+.top .user{
+	float: right;
+	margin:15px;
+}
+.login_btn{
+	border-radius:3px;
+	border: 1px solid #4285f4;
+	color: #fff;
+	background: #4285f4;
+	padding:5px 10px;
+	text-decoration: none;
+	font-size: 12px;
+}
+/** 首页 center-menus  */
+.center_menus{
+	margin: auto;
+	width:900px;
+	border: 1px solid #ccc;
+}
+.center_menus .s_keyword{
+	padding: 10px;
+}
+.center_menus .s_map{
+}
+.center_menus .s_center_menus{
+	border-bottom: 1px solid #ccc;
+}
+.center_menus .s_center_menus .item{
+	float:left;
+	padding:10px 20px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.active{
+	background: #9a9da2;
+	color:#fff;
+}
+.hover{
+	background:#b3b6bb;
+	color:#fff;
+}

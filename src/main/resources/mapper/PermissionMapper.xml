@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ace.dao.PermissionMapper">
+	<resultMap type="com.ace.entity.Permission" id="BaseResultMap">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<id column="name" property="name" jdbcType="VARCHAR" />
+		<id column="parent_id" property="parentId" jdbcType="VARCHAR" />
+		<id column="is_menu" property="isMenu" jdbcType="VARCHAR" />
+		<id column="class_name" property="className" jdbcType="VARCHAR" />
+		<id column="status" property="status" jdbcType="VARCHAR" />
+		<id column="menu_index" property="menuIndex" jdbcType="INTEGER" />
+		<id column="image_url" property="imageUrl" jdbcType="VARCHAR" />
+		<id column="url" property="url" jdbcType="VARCHAR" />
+		<id column="create_time" property="createTime" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id,name,parent_id,is_menu,class_name,status,menu_index,image_url,url,create_time
+	</sql>
+	<select id="getParentMenu" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from sys_permission p where is_menu = 'Y' and status = 'Y' and parent_id = 'admin' order by menu_index ASC
+	</select>
+	
+	<select id="getChildPermissionByGroupId" resultMap="BaseResultMap">
+		select p.<include refid="Base_Column_List" /> from sys_group_permission gp left join sys_permission p on gp.permission_id = p.id where gp.group_id = #{groupId,jdbcType=VARCHAR} and p.status = 'Y' order by p.menu_index ASC 
+	</select>
+	<select id="getChildPermissionByUserId" resultMap="BaseResultMap">
+		select p.<include refid="Base_Column_List" /> from sys_user_permission up left join sys_permission p on up.permission_id = p.id where up.user_id = #{userId,jdbcType=VARCHAR} and p.status = 'Y' order by p.menu_index ASC 
+	</select>
+	
+	<select id="getParentPermission" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from sys_permission where parent_id = 'admin' and status = 'Y'
+	</select>
+	
+	<select id="getPermissionByParentId" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select <include refid="Base_Column_List" /> from sys_permission where parent_id 
+		<if test="parentId == null">
+			is null
+		</if>
+		<if test="parentId != null">
+			= #{parentId,jdbcType=VARCHAR} 
+		</if>
+		 and status = 'Y' order by menu_index ASC 
+	</select>
+	
+	<select id="getCountByParentId" resultType="java.lang.Integer">
+		select count(*) from sys_permission where parent_id = #{parentId,jdbcType=VARCHAR} and status = 'Y'
+	</select>
+	
+</mapper>

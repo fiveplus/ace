@@ -1,0 +1,155 @@
+<div th:fragment="main">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<script type="text/javascript">
+			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+		</script>
+		
+		<ul class="breadcrumb">
+			<li>
+				<i class="icon-home home-icon"></i>
+				<a th:href="@{/admin/}">Home</a>
+			</li>
+			<li>
+				<a th:href="@{/admin/permission/list/1}">权限列表</a>
+			</li>
+			<li class="active">权限修改</li>
+		</ul><!-- .breadcrumb -->
+		
+		<div class="nav-search" id="nav-search">
+			<form action="" method="post" onsubmit="return false;" class="form-search">
+				<span class="input-icon">
+					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+					<i class="icon-search nav-search-icon"></i>
+				</span>
+			</form>
+		</div><!-- #nav-search -->
+		
+		<div class="page-content">
+			<div class="row">
+				<div class="col-xs-12">
+					<!-- PAGE CONTENT BEGINS -->
+					<div class="page-header">
+						<h1>权限修改
+						<small>
+							<i class="icon-double-angle-right">
+							请输入权限详细资料
+							</i>
+						</small>
+						</h1>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<form th:action="@{/admin/permission/update}" role="form" class="form-horizontal" method="post" id="form_post">
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请选择父菜单ID </label>
+									<div class="col-sm-9" style="margin-top:5px;">
+										<select name="parentId">
+											<option value="admin">请选择</option>
+											<option th:text="${p.name}" th:value="${p.id}" th:selected="${permission.parentId == p.id}" th:each="p,stat:${parents}"></option>
+										</select>
+										<font style="color:red; height:25px;line-height:25px;overflow:hidden;"><b>&nbsp;*</b></font>
+									</div>
+								</div>
+								<div class="space-4"></div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入权限ID </label>
+									<div class="col-sm-9" style="margin-top:9px;">
+										<input type="text" id="form-field-1" placeholder="权限ID" class="col-xs-10 col-sm-5" readonly="readonly" name="id" th:value="${permission.id}" />
+										<font style="color:red; height:25px;line-height:25px;overflow:hidden;"><b>&nbsp;*</b></font>
+									</div>
+								</div>
+								<div class="space-4"></div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入权限名称 </label>
+									<div class="col-sm-9" style="margin-top:9px;">
+										<input type="text" id="form-field-1" placeholder="菜单权限" class="col-xs-10 col-sm-5" name="name" th:value="${permission.name}" />
+										<font style="color:red; height:25px;line-height:25px;overflow:hidden;"><b>&nbsp;*</b></font>
+									</div>
+								</div>
+								<div class="space-4"></div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入ClassName</label>
+									<div class="col-sm-9" style="margin-top:9px;">
+										<input type="text" id="form-field-1" placeholder="ClassName" class="col-xs-10 col-sm-5" name="className" th:value="${permission.className}" />
+									</div>
+								</div>
+								<div class="space-4"></div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入权限坐标</label>
+									<div class="col-sm-9" style="margin-top:9px;">
+										<input type="text" id="form-field-1" placeholder="菜单权限" class="col-xs-10 col-sm-5" name="menuIndex" th:value="${permission.menuIndex}" />
+									</div>
+								</div>
+								<div class="space-4"></div>
+										
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 请输入URL</label>
+									<div class="col-sm-9" style="margin-top:9px;">
+										<input type="text" id="form-field-1" placeholder="URL" class="col-xs-10 col-sm-5" name="url" th:value="${permission.url}" />
+									</div>
+								</div>
+								<div class="space-4"></div>
+										
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 是否为菜单</label>
+									<div class="col-sm-9" style="margin-top:5px;">
+										<select name="isMenu">
+											<option value="Y" th:selected="${permission.isMenu == 'Y'}">是</option>
+											<option value="N" th:selected="${permission.isMenu == 'N'}">否</option>
+										</select>
+										<font style="color:red; height:25px;line-height:25px;overflow:hidden;"><b>&nbsp;*</b></font>
+									</div>
+								</div>
+								<div class="space-4"></div>
+								
+								<div class="clearfix form-actions">
+									<div class="col-md-offset-3 col-md-9">
+										<button class="btn btn-info" type="button" onclick="form_submit('form_post')">
+											<i class="icon-ok bigger-110"></i>
+											提交
+										</button>
+										&nbsp; &nbsp; &nbsp;
+										<button class="btn" type="reset" onclick="go_back()">
+											<i class="icon-undo bigger-110"></i>
+											返回
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- PAGE CONTENT ENDS -->
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.page-content -->
+		<script type="text/javascript" th:inline="javascript">
+			/*<![CDATA[*/
+			function form_submit(id){
+				bootbox.confirm("确认修改?",function(result){
+					var form = $("#"+id);
+					$.ajax({
+						url:form.attr('action'),
+						type:"POST",
+						data:form.serialize(),
+						dataType:'json',
+						success:function(data){
+							if(data.code == 0){
+								ace_msg.success(data.msg);
+							}else{
+								ace_msg.danger(data.msg);
+							}
+						},
+						error:function(data){
+							console.log(data);
+						}
+					});
+				});
+			}
+			/*]]>*/
+		</script>
+	</div>
+</div>

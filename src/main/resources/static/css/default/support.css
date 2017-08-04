@@ -1,0 +1,43 @@
+body{
+	margin:0;
+	padding:0;
+}
+.main-top{
+
+}
+.main-content{
+	background: #4285f4;
+	height:400px;
+}
+.title{
+	font-family: "黑体";
+	color: white;
+	padding: 20px;
+	font-size: 16px;
+}
+.main{
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	-webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	-moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	margin:0 50px; 
+	background: white;
+	padding:40px 80px;
+	font-family: "黑体";
+}
+.main-top{
+	padding:10px 0 0 10px;
+}
+.clear{
+	clear: both;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+.shi div{
+	padding: 0 0 10px 0;
+}
+.main-bottom{
+	
+}
+

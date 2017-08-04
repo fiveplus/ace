@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ace.dao.GroupMapper">
+	<resultMap type="com.ace.entity.Group" id="BaseResultMap">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<id column="name" property="name" jdbcType="VARCHAR" />
+		<id column="create_time" property="createTime" jdbcType="VARCHAR" />
+		<id column="remark" property="remark" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id,name,create_time,remark
+	</sql>
+	
+	<select id="queryByName" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" /> from tbl_group where name = #{name,jdbcType=VARCHAR} 
+	</select>
+	
+</mapper>

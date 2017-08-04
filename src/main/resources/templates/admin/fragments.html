@@ -1,0 +1,441 @@
+<!-- 全局头部定义 -->
+<head th:fragment="header">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Admin Application</title>
+<!-- csrf -->
+<!-- <meta name="_csrf" th:content="${_csrf.token}" />  -->
+<!-- default header name is X-XSRF-TOKEN -->
+<!-- <meta name="_csrf_header" th:content="${_csrf.headerName}" />  -->
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- basic styles -->
+<link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" />
+<link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}" />
+<!--[if IE 7]>
+		<link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+	<![endif]-->
+
+<!-- page specific plugin styles -->
+<link rel="stylesheet"
+	th:href="@{/assets/css/jquery-ui-1.10.3.custom.min.css}" />
+
+<link rel="stylesheet" th:href="@{/assets/css/jquery.gritter.css}" />
+
+<link rel="stylesheet" th:href="@{/assets/css/chosen.css}" />
+<link rel="stylesheet" th:href="@{/assets/css/datepicker.css}" />
+<link rel="stylesheet" th:href="@{/assets/css/bootstrap-timepicker.css}" />
+<link rel="stylesheet" th:href="@{/assets/css/daterangepicker.css}" />
+<link rel="stylesheet" th:href="@{/assets/css/colorpicker.css}" />
+
+<!-- fonts -->
+<link rel="stylesheet" th:href="@{/assets/css/ace-fonts.css}" />
+
+<!-- ace styles -->
+<link rel="stylesheet" th:href="@{/assets/css/ace.min.css}" />
+<link rel="stylesheet" th:href="@{/assets/css/ace-rtl.min.css}" />
+<link rel="stylesheet" th:href="@{/assets/css/ace-skins.min.css}" />
+
+<!--[if lte IE 8]>
+		<link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+	<![endif]-->
+
+<!-- inline styles related to this page -->
+<!-- ace settings handler -->
+<script th:src="@{/assets/js/ace-extra.min.js}"></script>
+
+<!-- zhangshenwu js -->
+<link rel="stylesheet" th:href="@{/js/ajaxfileupload.css}" />
+<link rel="stylesheet" th:href="@{/common/dynamic/css/stat.css}" />
+
+<link rel="stylesheet" th:href="@{/js/jquery.Jcrop.css}" />
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+<link rel="stylesheet" th:href="@{/css/index.css}" />
+
+<!-- basic scripts -->
+<script th:src="@{/assets/js/jquery-2.0.3.min.js}"></script>
+<script th:src="@{/assets/js/jquery.mobile.custom.min.js}"></script>
+
+<!-- basic scripts -->
+<!--[if !IE]> -->
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+	<script type="text/javascript">
+	 window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+	</script>
+<![endif]-->
+</head>
+
+<!-- Top全局定义 -->
+<div th:fragment="top">
+
+	<div class="navbar-container" id="navbar-container">
+		<div class="navbar-header pull-left">
+			<a href="javascript:void(0)" class="navbar-brand"> <small><i
+					class="icon-leaf"></i> CMS Admin</small>
+			</a>
+			<!-- /.brand -->
+		</div>
+		<!-- /.navbar-header -->
+
+		<div class="navbar-header pull-right" role="navigation">
+			<ul class="nav ace-nav">
+				<!-- 
+						<li class="grey">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="icon-tasks"></i>
+								<span class="badge badge-grey">4</span>
+							</a>
+
+							<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="icon-ok"></i>
+									4 Tasks to complete
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">Software Update</span>
+											<span class="pull-right">65%</span>
+										</div>
+
+										<div class="progress progress-mini ">
+											<div style="width:65%" class="progress-bar "></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">Hardware Upgrade</span>
+											<span class="pull-right">35%</span>
+										</div>
+
+										<div class="progress progress-mini ">
+											<div style="width:35%" class="progress-bar progress-bar-danger"></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">Unit Testing</span>
+											<span class="pull-right">15%</span>
+										</div>
+
+										<div class="progress progress-mini ">
+											<div style="width:15%" class="progress-bar progress-bar-warning"></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">Bug Fixes</span>
+											<span class="pull-right">90%</span>
+										</div>
+
+										<div class="progress progress-mini progress-striped active">
+											<div style="width:90%" class="progress-bar progress-bar-success"></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										See tasks with details
+										<i class="icon-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+						
+						
+						<li class="purple">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="icon-bell-alt icon-animated-bell"></i>
+								<span class="badge badge-important">8</span>
+							</a>
+
+							<ul class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="icon-warning-sign"></i>
+									8 Notifications
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-pink icon-comment"></i>
+												New Comments
+											</span>
+											<span class="pull-right badge badge-info">+12</span>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<i class="btn btn-xs btn-primary icon-user"></i>
+										Bob just signed up as an editor ...
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success icon-shopping-cart"></i>
+												New Orders
+											</span>
+											<span class="pull-right badge badge-success">+8</span>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info icon-twitter"></i>
+												Followers
+											</span>
+											<span class="pull-right badge badge-info">+11</span>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										See all notifications
+										<i class="icon-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+ 						-->
+
+				
+
+				<li class="light-blue"><a data-toggle="dropdown" href="#"
+					class="dropdown-toggle"> 
+						<img class="nav-user-photo" th:if="${user.portrait==''}" th:src="@{/assets/avatars/user.jpg}" alt="" /> 
+						<img class="nav-user-photo" th:if="${user.portrait!=''}" th:src="@{'/'+${user.portrait}}" alt="" /> 
+						<span class="user-info">
+						<small>Welcome,</small><span th:text="${user.userName}"></span>
+						</span> 
+						<i class="icon-caret-down"></i>
+				</a>
+					<ul
+						class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						<li><a th:href="@{/admin/user/uptuser}"> <i
+								class="icon-cog"></i> Settings
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="javascript:logout()"> <i class="icon-off"></i>
+								Logout
+						</a></li>
+					</ul></li>
+			</ul>
+			<!-- /.ace-nav -->
+		</div>
+		<!-- /.navbar-header -->
+	</div>
+	<!-- /.container -->
+
+	<script type="text/javascript" th:inline="javascript">
+		/*<![CDATA[*/
+		function logout() {
+			var contextPath = [[${contextPath}]];
+			//JS.Engine.stop();
+			window.location.href = contextPath+"/admin/login?logout";
+		}
+		/*]]>*/
+	</script>
+</div>
+
+<!-- menu.html -->
+
+<ul th:fragment="menu">
+	<li th:each="m,stat:${menus}" th:class="${m.permission.id==session.parentId}?'open':''">
+		<a href="#" class="dropdown-toggle">
+			<i th:class="${m.permission.className}"></i>
+			<span class="menu-text" th:text="${m.permission.name}"></span>
+			<b class="arrow icon-angle-down"></b>
+		</a>
+		<ul  class="submenu" th:style="${m.permission.id==session.parentId}?'display:block':''">
+			<li th:each="per,pstat:${m.pers}" >
+				<a th:href="@{'/'+${per.url}(parentId=${m.permission.id})}">
+				<i class="icon-double-angle-right"></i>
+					<text th:text="${per.name}"></text>
+				</a>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+<!-- foot.html -->
+<div th:fragment="foot">
+	
+	<script th:src="@{/js/default/index.js}"></script>
+	
+	<script type="text/javascript" th:src="@{/js/ajaxfileupload.js}" ></script> 
+	<script type="text/javascript" th:src="@{/js/jquery.Jcrop.js}" ></script> 
+		
+	<!-- comet4j服务器消息推送 -->
+	<script type="text/javascript" th:src="@{/js/comet4j.js}"></script> 	
+	
+	<!-- 消息统计框架 -->
+	<!-- <script src="../js/ichart.1.2.min.js"></script>  -->
+	<script th:src="@{/js/echarts.min.js}"></script>	
+	
+	<script th:src="@{/assets/js/bootstrap.min.js}"></script>
+	<script th:src="@{/assets/js/typeahead-bs2.min.js}"></script>	
+	
+	<!-- page specific plugin scripts -->
+	<script th:src="@{/assets/js/jquery-ui-1.10.3.custom.min.js}"></script>
+	<script th:src="@{/assets/js/jquery.ui.touch-punch.min.js}"></script>
+	
+	<script th:src="@{/assets/js/chosen.jquery.min.js}"></script>
+	<script th:src="@{/assets/js/fuelux/fuelux.spinner.min.js}"></script>
+	<script th:src="@{/assets/js/date-time/bootstrap-datepicker.min.js}"></script>
+	<script th:src="@{/assets/js/date-time/bootstrap-timepicker.min.js}"></script>
+	<script th:src="@{/assets/js/date-time/moment.min.js}"></script>
+	<script th:src="@{/assets/js/date-time/daterangepicker.min.js}"></script>
+	<script th:src="@{/assets/js/bootstrap-colorpicker.min.js}"></script> 
+	<script th:src="@{/assets/js/jquery.knob.min.js}"></script>
+	<script th:src="@{/assets/js/jquery.autosize.min.js}"></script>
+	<script th:src="@{/assets/js/jquery.inputlimiter.1.3.1.min.js}"></script>
+	<script th:src="@{/assets/js/jquery.maskedinput.min.js}"></script>
+	<script th:src="@{/assets/js/bootstrap-tag.min.js}"></script>
+	
+	<script th:src="@{/assets/js/markdown/markdown.min.js}"></script>
+	<script th:src="@{/assets/js/markdown/bootstrap-markdown.min.js}"></script>
+	<script th:src="@{/assets/js/jquery.hotkeys.min.js}"></script>
+	<script th:src="@{/assets/js/bootstrap-wysiwyg.min.js}"></script>
+	<script th:src="@{/assets/js/bootbox.min.js}"></script>
+	
+	<script th:src="@{/assets/js/jquery.easy-pie-chart.min.js}"></script>
+	<script th:src="@{/assets/js/jquery.gritter.min.js}"></script>
+	<script th:src="@{/assets/js/spin.min.js}"></script>
+	
+	<!-- ace scripts -->
+	<script th:src="@{/assets/js/ace-elements.min.js}"></script>
+	<script th:src="@{/assets/js/ace.min.js}"></script>
+	
+	<!-- tree -->
+	<script th:src="@{/assets/js/fuelux/fuelux.tree.min.js}"></script>
+	
+	<!-- messgae-alert -->
+	<script th:src="@{/js/acemsg.js}"></script>
+	<script type="text/javascript" th:inline="javascript">
+		/*<![CDATA[*/
+		//全局csrf token
+		//var token = $("meta[name='_csrf']").attr("content");
+		//var header = $("meta[name='_csrf_header']").attr("content");
+		/*
+		$(document).ajaxSend(function(e,xhr,options){
+			if(xhr.setRequestHeader){
+				xhr.setRequestHeader(header,token);
+			}else{
+				//options.data[name] = token;
+			}
+		});
+		*/
+		function go_url(url){
+			window.location.href=url;
+		}
+		function go_back(){
+			self.location=document.referrer;
+		}
+	
+		$(document).ready(function(){
+			$('[data-toggle="buttons"] .btn').on('click', function(e){
+				var target = $(this).find('input[type=radio]');
+				var which = parseInt(target.val());
+				var toolbar = $('#editor1').prev().get(0);
+				if(which == 1 || which == 2 || which == 3) {
+					toolbar.className = toolbar.className.replace(/wysiwyg\-style(1|2)/g , '');
+					if(which == 1) $(toolbar).addClass('wysiwyg-style1');
+					else if(which == 2) $(toolbar).addClass('wysiwyg-style2');
+				}
+			});
+			
+			//Add Image Resize Functionality to Chrome and Safari
+			//webkit browsers don't have image resize functionality when content is editable
+			//so let's add something using jQuery UI resizable
+			//another option would be opening a dialog for user to enter dimensions.
+			if ( typeof jQuery.ui !== 'undefined' && /applewebkit/.test(navigator.userAgent.toLowerCase()) ) {
+				
+				var lastResizableImg = null;
+				function destroyResizable() {
+					if(lastResizableImg == null) return;
+					lastResizableImg.resizable( "destroy" );
+					lastResizableImg.removeData('resizable');
+					lastResizableImg = null;
+				}
+		
+				var enableImageResize = function() {
+					$('.wysiwyg-editor')
+					.on('mousedown', function(e) {
+						var target = $(e.target);
+						if( e.target instanceof HTMLImageElement ) {
+							if( !target.data('resizable') ) {
+								target.resizable({
+									aspectRatio: e.target.width / e.target.height,
+								});
+								target.data('resizable', true);
+								
+								if( lastResizableImg != null ) {//disable previous resizable image
+									lastResizableImg.resizable( "destroy" );
+									lastResizableImg.removeData('resizable');
+								}
+								lastResizableImg = target;
+							}
+						}
+					})
+					.on('click', function(e) {
+						if( lastResizableImg != null && !(e.target instanceof HTMLImageElement) ) {
+							destroyResizable();
+						}
+					})
+					.on('keydown', function() {
+						destroyResizable();
+					});
+			    }
+				enableImageResize();
+				/**
+				//or we can load the jQuery UI dynamically only if needed
+				if (typeof jQuery.ui !== 'undefined') enableImageResize();
+				else {//load jQuery UI if not loaded
+					$.getScript($path_assets+"/js/jquery-ui-1.10.3.custom.min.js", function(data, textStatus, jqxhr) {
+						if('ontouchend' in document) {//also load touch-punch for touch devices
+							$.getScript($path_assets+"/js/jquery.ui.touch-punch.min.js", function(data, textStatus, jqxhr) {
+								enableImageResize();
+							});
+						} else	enableImageResize();
+					});
+				}
+				*/
+			}
+			
+		});
+		/*]]>*/
+	</script>
+	<!-- inline scripts related to this page -->
+</div>
