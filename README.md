@@ -6,7 +6,11 @@
 
 3.spring-boot内部集成tomcat，最终打包为jar。
 
-4.集成aliyun.durid监控，默认访问地址：http://yourdomain/druid/login.html,user=admin,password=admin
+4.集成aliyun.durid监控
+
+默认访问地址：http://yourdomain/druid/login.html,=
+
+user=admin,password=admin
 
 #2.部署为Unix/Linux Service
 
