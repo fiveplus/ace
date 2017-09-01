@@ -8,7 +8,7 @@
 
 4.集成aliyun.durid监控
 
-默认访问地址：http://yourdomain/druid/login.html,=
+默认访问地址：http://yourdomain/druid/login.html
 
 user=admin,password=admin
 
