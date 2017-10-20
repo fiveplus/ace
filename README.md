@@ -1,4 +1,4 @@
-#1.ace项目简介 (spring-boot 2.0.0 M3)
+# 1.ace项目简介 (spring-boot 2.0.0 M3)
 
 1.基于spring-boot 2.0.0 M3开发，集成spring-boot-starter-web,spring-boot-starter-thymeleaf,spring-boot-starter-security,mybatis,durid相关框架开发。
 
@@ -12,7 +12,7 @@
 
 user=admin,password=admin
 
-#2.部署为Unix/Linux Service
+# 2.部署为Unix/Linux Service
 
 1.设置为系统服务
 
@@ -34,7 +34,7 @@ sudo service app start|stop
 
 这可能是我们更熟悉也更常用的管理方式。
 
-##自定义参数
+## 自定义参数
 
 在这种方式下，我们还可以使用自定义的.conf文件来变更默认配置，方法如下：
 
@@ -45,7 +45,7 @@ JAVA_HOME=/usr/local/jdk
 JAVA_OPTS=-Xmx1024M
 LOG_FOLDER=/custom/log
 
-##安全设置
+## 安全设置
 
 作为应用服务，安全性是一个不能忽略的问题，如下一些操作可以作为部分基础设置参考：
 
