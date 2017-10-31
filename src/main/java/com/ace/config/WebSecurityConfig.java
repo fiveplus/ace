@@ -23,19 +23,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.headers().frameOptions().disable();
 		http.csrf().disable();
 		http.authorizeRequests()
-		.antMatchers("/","/druid/**").permitAll()
 		.and()
 		.formLogin()
+		.defaultSuccessUrl("/admin/")
 		.loginPage("/admin/login")
-		.permitAll()
-		.and()
-		.logout()
 		.permitAll();
+		super.configure(http);
 	}
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers(
+				"/",
+				"/druid/**",
 				"/assets/**",
 				"/css/**",
 				"/js/**"
