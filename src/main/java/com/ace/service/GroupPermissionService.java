@@ -11,7 +11,7 @@ public class GroupPermissionService extends BaseService<GroupPermission>{
 	@Autowired
 	private GroupPermissionMapper groupPermissionMapper;
 	
-	public int deletePermissionByGroupId(int groupId){
+	public int deletePermissionByGroupId(Integer groupId){
 		return groupPermissionMapper.deletePermissionByGroupId(groupId);
 	}
 	

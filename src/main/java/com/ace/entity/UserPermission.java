@@ -9,21 +9,21 @@ import javax.persistence.Table;
 @Table(name="sys_user_permission")
 public class UserPermission implements Serializable{
 	@Id
-	private int id;
+	private Integer id;
 	@Column
-	private int userId;
+	private Integer userId;
 	@Column
 	private String permissionId;
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	public int getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 	public String getPermissionId() {

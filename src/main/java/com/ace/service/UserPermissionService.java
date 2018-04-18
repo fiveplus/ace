@@ -11,7 +11,7 @@ public class UserPermissionService extends BaseService<UserPermission>{
 	@Autowired
 	private UserPermissionMapper deletePermissionByUserId;
 	
-	public int deletePermissionByUserId(int userId){
+	public int deletePermissionByUserId(Integer userId){
 		return deletePermissionByUserId.deletePermissionByUserId(userId);
 	}
 	

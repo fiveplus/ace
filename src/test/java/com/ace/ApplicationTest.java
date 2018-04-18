@@ -12,7 +12,16 @@ public class ApplicationTest {
 
 	@Test
 	public void contextLoads() {
-		
+		int a = 100;
+		while(a < 1000){
+			int g = a%10;
+			int s = a%100/10;
+			int b = a%1000/100;
+			if(g*g*g+s*s*s+b*b*b == a){
+				System.out.println(a);
+			}
+			a++;
+		}
 	}
 
 }

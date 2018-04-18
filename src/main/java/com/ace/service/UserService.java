@@ -31,7 +31,7 @@ public class UserService extends BaseService<User>{
 		return p;
 	}
 	
-	public UserBO getUserById(int id){
+	public UserBO getUserById(Integer id){
 		return userMapper.getUserById(id);
 	}
 	

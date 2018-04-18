@@ -7,21 +7,21 @@ import javax.persistence.Table;
 @Table(name="sys_group_permission")
 public class GroupPermission {
 	@Id
-	private int id;
+	private Integer id;
 	@Column
-	private int groupId;
+	private Integer groupId;
 	@Column
 	private String permissionId;
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	public int getGroupId() {
+	public Integer getGroupId() {
 		return groupId;
 	}
-	public void setGroupId(int groupId) {
+	public void setGroupId(Integer groupId) {
 		this.groupId = groupId;
 	}
 	public String getPermissionId() {

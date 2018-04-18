@@ -2,17 +2,18 @@ package com.ace.service;
 
 import java.util.List;
 
+import com.ace.tk.TKMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.github.abel533.entity.Example;
-import com.github.abel533.mapper.Mapper;
+
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import tk.mybatis.mapper.entity.Example;
 
 
 public class BaseService<T> {
 	@Autowired
-	private Mapper<T> mapper;
+	private TKMapper<T> mapper;
 	
 	//根据ID查询实体
 	public T queryById(Object id){

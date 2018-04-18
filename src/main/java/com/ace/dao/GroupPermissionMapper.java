@@ -1,10 +1,10 @@
 package com.ace.dao;
 
+import com.ace.tk.TKMapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.ace.entity.GroupPermission;
-import com.github.abel533.mapper.Mapper;
 
-public interface GroupPermissionMapper extends Mapper<GroupPermission>{
-	public int deletePermissionByGroupId(@Param("groupId") int groupId);
+public interface GroupPermissionMapper extends TKMapper<GroupPermission> {
+	public int deletePermissionByGroupId(@Param("groupId") Integer groupId);
 }

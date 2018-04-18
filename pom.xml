@@ -22,6 +22,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+
+		<mapper.version>2.0.1</mapper.version>
+		<pagehelper.version>5.1.2</pagehelper.version>
+		<mybatis-spring-boot-starter.version>1.1.1</mybatis-spring-boot-starter.version>
+		<durid.version>1.0.26</durid.version>
+
+
 	</properties>
 
 	<dependencies>
@@ -58,19 +65,19 @@
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.1.1</version>
+			<version>${mybatis-spring-boot-starter.version}</version>
 		</dependency>
-		<!-- 分页插件 -->
+		<!-- 通用Mapper  -->
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper-spring-boot-starter</artifactId>
+			<version>${mapper.version}</version>
+		</dependency>
+		<!-- 分页助手  -->
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper</artifactId>
-			<version>4.1.6</version>
-		</dependency>
-		<!-- 通用mapper -->
-		<dependency>
-			<groupId>com.github.abel533</groupId>
-			<artifactId>mapper</artifactId>
-			<version>2.3.4</version>
+			<version>${pagehelper.version}</version>
 		</dependency>
 		
 		
@@ -78,7 +85,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
-			<version>1.0.26</version>
+			<version>${durid.version}</version>
 		</dependency>
 
 		<dependency>
