@@ -16,7 +16,7 @@ user=admin,password=admin
 
 1.设置为系统服务
 
-将你的应用打成jar包，部署到服务器，假设部署路径为/var/app，包名为app.jar，通过如下方式将应该设置为一个系统服务：
+将你的应用打成jar包，部署到服务器，假设部署路径为/var/app，包名为app.jar，通过如下方式将应用设置为一个系统服务：
 sudo ln -s /var/app/app.jar /etc/init.d/app
 
 2.赋予可执行权限
